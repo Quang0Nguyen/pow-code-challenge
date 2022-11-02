@@ -1,7 +1,5 @@
-import { ISpell } from "@/utils/type";
 import axios from "axios"
-// const baseUrl = "https://www.dnd5eapi.co/api"
-const baseUrl = process.env.API_HOST;
+const baseUrl = "https://www.dnd5eapi.co/api"
 
 export const getListSpell = async () => {
   let res = await axios.get(`${baseUrl}/spells`);

@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { ISpell } from 'utils/type';
-
 export interface SpellsState {
   value: number;
   listFavorite: string[];
@@ -33,9 +31,11 @@ export const spellsSlice = createSlice({
     mutateFavorites: (state,  action: PayloadAction<string>) => {
       if(state.listFavorite.indexOf(action.payload) > -1) {
           state.listFavorite = [...state.listFavorite.filter(item => item !== action.payload)]
+          // alert("Removed spell from Favorite list")
       } else {
         state.listFavorite.push(action.payload)
         state.listFavorite = [...state.listFavorite]
+        // alert("Added spell into favorite list")
       }
     }
   },

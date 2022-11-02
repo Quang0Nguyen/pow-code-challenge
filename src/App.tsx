@@ -3,12 +3,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-
-import Home from "./pages/home";
+import { QueryClient, QueryClientProvider } from 'react-query'
 import SpellDetail from "./pages/spell-detail";
+import Home from "./pages/home";
 import "./App.css";
 
 const queryClient = new QueryClient()
@@ -17,7 +15,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <div style={{ width: "90vw", margin: "auto", padding: "" }}>
+        <div style={{ width: "90vw", margin: "auto", padding: "", maxWidth: "1000px" }}>
           <nav>
           </nav>
 
